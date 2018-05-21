@@ -1,5 +1,5 @@
 /* Color Palette
-#C0DB3D - green
+#f44b42 - red/orange
 #FFF8F0 - white
 #620504 - red
 #3E3C3D - med grey
@@ -8,62 +8,98 @@
 
 /* Global */
 body {
-    background-color: #FFF8F0;
+    background-image: url('images/brickwall.jpg');
     color: #1C1C21;
     font-size: 20px;
 }
-a {
-    color: #C0DB3D;
+.box {
+    display: inline-flex;
+    justify-content: space-around;
 }
-#homepageImage {
-    float: left;
+/*Header Footer*/
+header {
+    background-color: #3E3C3D;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    filter: drop-shadow(0 0 10px #333);
+    border-radius: 5px 5px 0 0;
+}
+a:link {
+    color: #f44b42;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    padding: 10px; 
+}
+a:visited {
+    color: #FFF8F0;
+}
+
+footer {
+    background-color: #3E3C3D;
+    width: 100%;
+    height: 40px;
+}
+/* Banner */
+#banner {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px #333);
+    border-radius: 0 0 5px 5px;
 }
 .tagLine {
+    color:  #f44b42;
     text-align: center;
-    font-family: 'Monoton', cursive;
+    font-family: 'Oswald', sans-serif;
     font-size: 70px;
     letter-spacing: 3px;
     word-spacing: 10px;
-}
-.classDetails {
-    background: #3E3C3D;
-    text-align: center;
-    color: #FFF8F0;
-    padding: 5px;
-    margin: 10px;
-    border: 10px solid #C0DB3D;
-    position: absolute;
-    z-index: -1;
-}
-.classes p {
-    font-size: 25px;
-
-}
-.classPhotos {
-    width: 33%;
-    height: 33%;
-    padding: 10px;
+    text-shadow: 2px 2px  rgba(28, 28, 33, .5);
 }
 
-.box {
+/* Offered Classes */
+.text {
+  color: #FFF8F0;
+  font-size: 30px;
+  position: absolute;
+  margin: 20px 10px auto 10px;
+  text-align: center;
+}
+.classPhoto {
     display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-}
-#banner {
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
     width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
 }
-#bannerBorder {
-    background-color: black;
-    margin: 0;
+
+/* Fade in Overlay */
+.container:hover .overlay {
+    opacity: 1;
 }
-/* Header Footer */
-nav {
-    background-color:#3E3C3D ;
-    padding: 20px;
-    margin: 0;
-    
+.container {
+    position: relative;
+    width: 33%;
+    height: auto;
+    margin: 10px;
+    filter: drop-shadow(0 0 10px #333);
+
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(28, 28, 33, .8);
+    border: 5px solid #f44b42;
+    border-radius: 10px;
+    margin: -5px;
 }
